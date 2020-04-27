@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+* {
+	font-family: 'Raleway';
+}
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: black;
+	color: white;
+}
+nav,
+ul {
+	list-style: none;
+	align-items: center;
+	padding: 0 10px;
+}
+li {
+	display: inline;
+	line-height: 1.6;
+	padding-left: 10px;
+}
+.search-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin: 20px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+	margin: 0 20px;
+	height: 40px;
+	width: 500px;
+	font-size: 16px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-button {
+	height: 45px;
+	width: 150px;
+	font-size: 16px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+img {
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
 }
-
-.App-link {
-  color: #61dafb;
+.main-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-gap: 1rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.single-board {
+	border: 2px solid darkgray;
+}
+h3,
+h4 {
+	text-align: center;
 }
