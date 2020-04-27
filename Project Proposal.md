@@ -1,7 +1,7 @@
 ## Project proposal
 
 For this project I'm thinking of doing one of these two. Recipe search website or Movie search website.
-I have to test API to see which one give me the result data that I can work with. 
+I have to test API to see which one give me the result data that I can work with.
 
 MVP: The webite will have 4 react components App-Navigation-Mainpage-Individual Page.
 The App component should render Nav and Mainpage where Mainpage is the container of images. The search results will be rendered via Mainpage.
@@ -14,9 +14,10 @@ Platnum: Allow users to create account to store recipes/movies
 
 Below is a simple diagram of the components and my thought process when planning for the components hierarchy.
 
+<img src='./images/wireframe1.jpg>
 
 ## Wirefame
 
 I created the basic layout using wireframing method to ideate the website looks and feel, placing each individual items
 and element of show they should display on the page. This is a starter and could slightly change over time as project progress.
-
+<img src='/images/wireframe2.jpg>
