@@ -12,7 +12,7 @@ function Search(props) {
 					onChange={handleChange}
 					value={searchString}></input>
 				<button className='search-button' type='submit'>
-					Search
+					🔍 Search
 				</button>
 			</form>
 		</div>
