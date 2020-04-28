@@ -3,8 +3,10 @@ import React from 'react';
 function LastSearch({lastSearch}) {
 	return (
 		<header>
-			<div>
-				<p>Showing Results For : {lastSearch}</p>
+			<div className='last-search-div'>
+				<p>
+					<strong> Showing Results For : {lastSearch}</strong>
+				</p>
 			</div>
 		</header>
 	);
