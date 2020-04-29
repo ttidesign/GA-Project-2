@@ -4,7 +4,6 @@ import './App.css';
 import Nav from './components/Nav';
 import LastSearch from './components/LastSearch';
 import Search from './components/Search';
-import Trending from './components/TrendingsNow'
 import SearchResults from './components/SearchResults';
 import Movie from './components/Movie';
 import Footer from './components/Footer'

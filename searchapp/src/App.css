@@ -7,6 +7,7 @@ nav {
 	align-items: center;
 	background-color: black;
 	color: white;
+	height: 100px;
 }
 footer {
 	position: relative;
@@ -60,15 +61,17 @@ p {
 	font-size: 16px;
 }
 .last-search-div {
-	margin-left: 1rem;
+	margin: 3rem 1rem 1rem;
 }
 .gallery-container {
 	margin: 0 1rem;
 }
+
 img.trending {
-	width: 15%;
-	height: 100px;
-	object-fit: cover;
+	width: 130px;
+	margin: 0 5px;
+	border-radius: 5px;
+	object-fit: scale-down;
 }
 img.thumbnails {
 	width: 100%;
@@ -83,12 +86,15 @@ img.backdrop {
 	background-color: black;
 }
 .trending-container {
-	height: 150px;
 	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
+	overflow: auto;
+	margin: 0 0 1rem 1rem;
+}
+.trending-image-container {
+	padding-top: 1rem;
+}
+.trending-image-container:hover {
 	background-color: lightgray;
-	box-shadow: 0 5px 10px lightgray;
 }
 .main-gallery {
 	display: grid;
@@ -147,4 +153,7 @@ h3,
 	margin-left: 20px;
 	text-align: left;
 	width: 800px;
+}
+.main-logo {
+	colog: white;
 }
