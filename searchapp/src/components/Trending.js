@@ -1,17 +1,17 @@
 import React from 'react';
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import imageUrl from './imageUrl';
-
-function Movie(props) {
+function Trending(props) {
+	console.log(props);
 	let info;
-	for (let i = 0; i < props.datas.length; i++) {
-		if (props.datas[i].id === parseInt(props.id)) {
-			console.log(props, props.datas[0].overview);
-			info = props.datas[i];
+	for (let i = 0; i < props.trendings.length; i++) {
+		if (props.trendings[i].id === parseInt(props.id)) {
+			console.log(props, props.trendings[0].overview);
+			info = props.trendings[i];
 		}
 	}
 	return (
-		<div style={{height:'800px',backgroundColor:'rgb(53, 53, 53)'}}>
+		<div style={{ height: '800px', backgroundColor: 'rgb(53, 53, 53)' }}>
 			<div className='section-container'>
 				<div className='movie-container'>
 					<img
@@ -38,4 +38,4 @@ function Movie(props) {
 		</div>
 	);
 }
-export default Movie;
+export default Trending;

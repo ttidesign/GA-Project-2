@@ -1,6 +1,10 @@
 * {
 	font-family: 'Manrope';
 }
+.root{
+	height: 100vh;
+	position: relative;
+}
 nav {
 	display: flex;
 	justify-content: space-between;
@@ -9,10 +13,10 @@ nav {
 	color: white;
 	height: 100px;
 }
-footer {
-	position: relative;
-	bottom: 100;
-	margin-top: 20px;
+footer {	
+	width: 100%;
+	bottom:0;
+	padding-top: 2rem;
 }
 nav,
 ul {
@@ -138,6 +142,7 @@ h3,
 	float: right;
 }
 .section-container {
+	padding-top: 2rem;
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
@@ -155,5 +160,22 @@ h3,
 	width: 800px;
 }
 .main-logo {
-	colog: white;
+	opacity: 0.8;
+}
+.main-logo:hover {
+	opacity: 1;
+}
+.home-button{
+	margin-top: 10px;
+	margin-right: 10px;
+	height: 45px;
+	width: 150px;
+	font-size: 16px;
+}
+.add-to-list{
+	margin-top: 10px;
+	margin-right: 10px;
+	height: 45px;
+	width: 200px;
+	font-size: 16px;
 }

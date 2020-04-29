@@ -8,6 +8,7 @@ import SearchResults from './components/SearchResults';
 import Movie from './components/Movie';
 import Footer from './components/Footer'
 import TrendingsNow from './components/TrendingsNow';
+import Trending from './components/Trending' 
 function App() {
 	const searchOptions = {
 		key: process.env.REACT_APP_MOVIE_API_KEY,
@@ -17,16 +18,24 @@ function App() {
 		adult: '&include_adult=false',
 	};
 	const [datas, setDatas] = useState([]);
+	const [showMore, setShowMore] = useState(false)
 	const [searchString, setSearchString] = useState('Avengers');
 	const [lastSearch, setLastSearch] = useState('');
 	const [trendings, setTrendings] = useState([])
+	const [favorite, setFavorite] = useState([])
 
 	useEffect(() => {
 		getDatas(searchString);
 	}, []);
+
 	useEffect(() => {
 		getTrendings();
 	}, []);
+
+	// useEffect(()=> {
+	// 	handleMoreItem();
+	// },[])
+
 	function getDatas(searchString) {
 		const url = `https://api.themoviedb.org/3/search/multi?api_key=${searchOptions.key}${searchOptions.language}${searchOptions.query}${searchString}${searchOptions.page}${searchOptions.adult}`;
 		
@@ -53,6 +62,10 @@ function App() {
 	function handleChange(event) {
 		setSearchString(event.target.value);
 	}
+
+	function handleMoreItem() {
+		setShowMore(true)
+	}
 	function handleSubmit(event) {
 		event.preventDefault();
 		getDatas(searchString);
@@ -73,7 +86,18 @@ function App() {
 					);
 				}}
 			/>
-			<TrendingsNow trendings={trendings}/>
+			<Route exact path='/' render={(routerProps)=>{
+				return(<TrendingsNow trendings={trendings} />)
+			}}/>
+			
+			<Route
+				exact
+				path='/trending/:id'
+				render={(routerProps) => {
+					console.log(routerProps);
+					return <Trending trendings={trendings} id={routerProps.match.params.id} />;
+				}}
+			/>
 			<Route
 				exact
 				path='/'
@@ -85,9 +109,16 @@ function App() {
 				exact
 				path='/'
 				render={(routerProps) => {
-					return <SearchResults datas={datas} />;
+					return (
+						<SearchResults
+							datas={datas}
+							showMore={showMore}
+							handleMoreItem={handleMoreItem}
+						/>
+					);
 				}}
 			/>
+			
 			<Route
 				exact
 				path='/:id'
@@ -96,7 +127,7 @@ function App() {
 					return <Movie datas={datas} id={routerProps.match.params.id} />;
 				}}
 			/>
-			<Footer />
+		<Footer />
 		</div>
 	);
 }

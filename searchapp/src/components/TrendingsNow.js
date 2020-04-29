@@ -3,14 +3,13 @@ import imageUrl from './imageUrl';
 import { Link } from 'react-router-dom';
 
 const TrendingsNow = ({ trendings }) => {
-	console.log(trendings, imageUrl.smallImage);
 	return (
 		<div className=''>
 			<h4 style={{ margin: '3rem 1rem 1rem' }}>TRENDING NOW</h4>
 			<div className='trending-container'>
 				{trendings.map((data) => (
 					<div className='trending-image-container' key={data.id}>
-						<Link to={'/' + parseInt(data.id)}>
+						<Link to={'/trending/' + parseInt(data.id)}>
 							<img
 								className='trending'
 								src={

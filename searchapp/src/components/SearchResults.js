@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import imageUrl from './imageUrl';
-const SearchResults = ({ datas }) => {
-	if (!datas.length) {
-		return <h2>result not found</h2>;
+const SearchResults = ({ datas, showMore, handleMoreItem }) => {
+	//console.log(handleMoreItem);
+	console.log('showMore', showMore);
+	if (showMore === false) {
+		datas.length = 10;
+	} else if (showMore === true) {
+		datas.length = 20;
 	}
 	return (
 		<div className='gallery-container'>
+			<button onClick={handleMoreItem}>SHOW MORE</button>
 			<div className='main-gallery'>
-				{datas.slice(0, 10).map((data) => (
+				{datas.map((data) => (
 					<div className='single-board' key={data.id}>
 						<Link to={'/' + parseInt(data.id)}>
 							<img
