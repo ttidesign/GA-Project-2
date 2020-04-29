@@ -17,13 +17,18 @@ function App() {
 		page: '&page=1',
 		adult: '&include_adult=false',
 	};
+	//set initial data array using use-state
 	const [datas, setDatas] = useState([]);
-	const [showMore, setShowMore] = useState(false)
+	//set initial search string to 'avenger' using set-state 
 	const [searchString, setSearchString] = useState('Avengers');
+	// set last search item to empty string
 	const [lastSearch, setLastSearch] = useState('');
+	//set initial data for different api call
 	const [trendings, setTrendings] = useState([])
-	const [favorite, setFavorite] = useState([])
-
+	// set more item from api call to false
+	const [moreItem, setMoreItem] = useState(false)
+	//const [favorite, setFavorite] = useState([])
+	
 	useEffect(() => {
 		getDatas(searchString);
 	}, []);
@@ -31,41 +36,46 @@ function App() {
 	useEffect(() => {
 		getTrendings();
 	}, []);
-
-	// useEffect(()=> {
-	// 	handleMoreItem();
-	// },[])
-
+	
+	//function that update more item and show on main page
+	function getMoreItem() {
+		setMoreItem(!moreItem);
+	}
+	//function with api call to get data from server - search feature
 	function getDatas(searchString) {
 		const url = `https://api.themoviedb.org/3/search/multi?api_key=${searchOptions.key}${searchOptions.language}${searchOptions.query}${searchString}${searchOptions.page}${searchOptions.adult}`;
-		
+		//fetch data
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
+				console.log(response.results)
+				//set datas value and assign to datas arry
 				setDatas(response.results);
-				console.log(response);
+				// display last search item on page
 				setLastSearch(searchString);
+				// reset search box
 				setSearchString('');
 			})
 			.catch(console.error);
 	}
+	//function that make an api call to get different data -trending
 	function getTrendings() {
 		const url = `https://api.themoviedb.org/3/trending/all/day?api_key=${searchOptions.key}`;
-		console.log(url);
 		fetch(url)
 		.then((response) => response.json())
+		//return result
 		.then((response) =>{setTrendings(response.results);
-			console.log(response)}).catch(console.error);
+		//console.log(response)
+		})
+		.catch(console.error);
 		}
 	
-	
+	//get value form search box
 	function handleChange(event) {
 		setSearchString(event.target.value);
 	}
 
-	function handleMoreItem() {
-		setShowMore(true)
-	}
+	// update search data when submit
 	function handleSubmit(event) {
 		event.preventDefault();
 		getDatas(searchString);
@@ -112,8 +122,8 @@ function App() {
 					return (
 						<SearchResults
 							datas={datas}
-							showMore={showMore}
-							handleMoreItem={handleMoreItem}
+							moreItem={moreItem}
+							getMoreItem={getMoreItem}
 						/>
 					);
 				}}

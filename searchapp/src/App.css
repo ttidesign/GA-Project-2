@@ -1,7 +1,7 @@
 * {
 	font-family: 'Manrope';
 }
-.root{
+.root {
 	height: 100vh;
 	position: relative;
 }
@@ -13,9 +13,9 @@ nav {
 	color: white;
 	height: 100px;
 }
-footer {	
+footer {
 	width: 100%;
-	bottom:0;
+	bottom: 0;
 	padding-top: 2rem;
 }
 nav,
@@ -165,14 +165,20 @@ h3,
 .main-logo:hover {
 	opacity: 1;
 }
-.home-button{
+.show-more {
+	margin: 20px auto;
+	width: 150px;
+	height: 50px;
+	
+}
+.home-button {
 	margin-top: 10px;
 	margin-right: 10px;
 	height: 45px;
 	width: 150px;
 	font-size: 16px;
 }
-.add-to-list{
+.add-to-list {
 	margin-top: 10px;
 	margin-right: 10px;
 	height: 45px;
