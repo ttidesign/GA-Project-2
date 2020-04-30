@@ -24,10 +24,12 @@ ul {
 	align-items: center;
 	padding: 0 10px;
 }
+
 li {
 	display: inline;
 	line-height: 1.6;
 	padding-left: 10px;
+	font-size: 16px;
 }
 
 input {
@@ -35,6 +37,17 @@ input {
 	height: 40px;
 	width: 500px;
 	font-size: 16px;
+}
+button {
+	box-shadow: 3px 3px 7px darkgrey;
+	height: 45px;
+	font-size: 16px;
+}
+button:hover {
+	color: darkorange;
+}
+img {
+	box-shadow: 3px 3px 10px black;
 }
 h4 {
 	margin: 15px auto;
@@ -46,10 +59,15 @@ h2 {
 p {
 	margin: 5px auto;
 }
+a,
+li:hover {
+	color: lightsalmon;
+}
 .search-container {
 	margin: 0 auto;
 	height: 88px;
 	background-color: rgba(169, 169, 169, 0.5);
+	box-shadow: 2px 0 8px black;
 }
 .search-bar {
 	display: flex;
@@ -60,9 +78,7 @@ p {
 }
 
 .search-button {
-	height: 45px;
 	width: 150px;
-	font-size: 16px;
 }
 .last-search-div {
 	margin: 3rem 1rem 1rem;
@@ -71,23 +87,22 @@ p {
 	margin: 0 1rem;
 }
 
-img.trending {
+.trending {
 	width: 130px;
 	margin: 0 5px;
-	border-radius: 5px;
+	border-radius: 10px;
 	object-fit: scale-down;
 }
-img.thumbnails {
+.thumbnails {
 	width: 100%;
 	height: 300px;
 	object-fit: cover;
 }
-img.backdrop {
+.backdrop {
 	width: 50%;
 	height: auto;
 	opacity: 0.85;
 	object-fit: cover;
-	background-color: black;
 }
 .trending-container {
 	display: flex;
@@ -113,7 +128,6 @@ img.backdrop {
 .single-board:hover {
 	background-color: lightgrey;
 	opacity: 0.9;
-	box-shadow: 3px 3px 10px black;
 }
 .single-board,
 a {
@@ -165,23 +179,20 @@ h3,
 .main-logo:hover {
 	opacity: 1;
 }
-.show-more {
-	margin: 20px auto;
-	width: 150px;
-	height: 50px;
-	
+.show-more-button {
+	margin: 40px auto 0px auto;
+	width: 110px;
+	display: flex;
 }
 .home-button {
-	margin-top: 10px;
-	margin-right: 10px;
-	height: 45px;
-	width: 150px;
-	font-size: 16px;
+	margin-top: 20px;
+	margin-right: 20px;
+	width: 100px;
+	box-shadow: 3px 3px 8px black;
 }
 .add-to-list {
-	margin-top: 10px;
+	margin-top: 20px;
 	margin-right: 10px;
-	height: 45px;
 	width: 200px;
-	font-size: 16px;
+	box-shadow: 3px 3px 8px black;
 }

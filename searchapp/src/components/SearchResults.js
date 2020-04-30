@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import imageUrl from './imageUrl';
 function SearchResults(props) {
@@ -10,15 +10,15 @@ function SearchResults(props) {
 		itemToReturn = (
 			<div className='main-gallery'>
 				{datas.slice(0, 10).map((data) => {
+					if (data.poster_path === undefined) {
+						data.poster_path = data.profile_path;
+					}
 					return (
 						<div className='single-board' key={data.id}>
-							<Link to={'/' + parseInt(data.id)}>
+							<Link to={'/search/' + parseInt(data.id)}>
 								<img
 									className='thumbnails'
-									src={
-										imageUrl.smallImage + data.poster_path ||
-										imageUrl.smallImage + data.profile_path
-									}
+									src={imageUrl[0].smallImage + data.poster_path}
 									alt={data.original_title}></img>
 								<h3>{data.original_title || data.name}</h3>
 								<p className='year-info'>
@@ -35,15 +35,15 @@ function SearchResults(props) {
 		itemToReturn = (
 			<div className='main-gallery'>
 				{datas.map((data) => {
+					if (data.poster_path === undefined) {
+						data.poster_path = data.profile_path;
+					}
 					return (
 						<div className='single-board' key={data.id}>
 							<Link to={'/' + parseInt(data.id)}>
 								<img
 									className='thumbnails'
-									src={
-										imageUrl.smallImage + data.poster_path ||
-										imageUrl.smallImage + data.profile_path
-									}
+									src={imageUrl[0].smallImage + data.poster_path}
 									alt={data.original_title}></img>
 								<h3>{data.original_title || data.name}</h3>
 								<p className='year-info'>
@@ -59,8 +59,8 @@ function SearchResults(props) {
 	return (
 		<div className='gallery-container'>
 			{itemToReturn}
-			<button className='show-more' onClick={getMoreItem}>
-				SHOW MORE 
+			<button className='show-more-button' onClick={getMoreItem}>
+				SHOW MORE
 			</button>
 		</div>
 	);

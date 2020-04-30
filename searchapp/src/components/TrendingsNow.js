@@ -13,8 +13,8 @@ const TrendingsNow = ({ trendings }) => {
 							<img
 								className='trending'
 								src={
-									imageUrl.smallImage + data.poster_path ||
-									imageUrl.smallImage + data.profile_path
+									imageUrl[0].smallImage + data.poster_path ||
+									imageUrl[0].smallImage + data.profile_path
 								}
 								alt={data.original_title}></img>
 							<p

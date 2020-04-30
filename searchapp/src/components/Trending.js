@@ -1,21 +1,27 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import imageUrl from './imageUrl';
 function Trending(props) {
-	console.log(props);
-	let info;
-	for (let i = 0; i < props.trendings.length; i++) {
-		if (props.trendings[i].id === parseInt(props.id)) {
-			console.log(props, props.trendings[0].overview);
-			info = props.trendings[i];
+	const [info, setInfo] = useState([])
+	useEffect(()=>{
+		for (let i = 0; i < props.trendings.length; i++) {
+			if (props.trendings[i].id === parseInt(props.id)) {
+				console.log(props, props.trendings[0].overview);
+				setInfo (props.trendings[i]);
+			}
 		}
-	}
+		//eslint-disable-next-line
+	},[])
+	console.log(props);
+	if(info.length === 0) {
+		return <h2> </h2>
+	} 
 	return (
 		<div style={{ height: '800px', backgroundColor: 'rgb(53, 53, 53)' }}>
 			<div className='section-container'>
 				<div className='movie-container'>
 					<img
-						src={imageUrl.largeImg + info.poster_path}
+						src={imageUrl[1].largeImg + info.poster_path}
 						alt={info.title}></img>
 
 					{/* <img className ='backdrop' src={imageUrl.backDrop + info.backdrop_path}></img> */}
@@ -29,9 +35,9 @@ function Trending(props) {
 						</h4>
 						<p> {info.overview}</p>
 						<Link to='/'>
-							<button className='home-button'>Home</button>
+							<button className='home-button'>HOME</button>
 						</Link>
-						<button className='add-to-list'>Add to Watch Lists</button>
+						<button className='add-to-list'>ADD TO WATCH LIST</button>
 					</div>
 				</div>
 			</div>

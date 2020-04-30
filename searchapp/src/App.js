@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Route } from 'react-router-dom';
+import {Route } from 'react-router-dom';
 import './App.css';
 import Nav from './components/Nav';
 import LastSearch from './components/LastSearch';
@@ -8,7 +8,10 @@ import SearchResults from './components/SearchResults';
 import Movie from './components/Movie';
 import Footer from './components/Footer'
 import TrendingsNow from './components/TrendingsNow';
-import Trending from './components/Trending' 
+import Trending from './components/Trending';
+import Trailers from './components/Trailers'
+import WatchList from './components/WatchList';
+import MyAccount from './components/MyAccount' 
 function App() {
 	const searchOptions = {
 		key: process.env.REACT_APP_MOVIE_API_KEY,
@@ -35,6 +38,7 @@ function App() {
 
 	useEffect(() => {
 		getTrendings();
+		//eslint-disable-next-line
 	}, []);
 	
 	//function that update more item and show on main page
@@ -83,6 +87,7 @@ function App() {
 	return (
 		<div>
 			<Nav />
+
 			<Route
 				exact
 				path='/'
@@ -96,18 +101,25 @@ function App() {
 					);
 				}}
 			/>
-			<Route exact path='/' render={(routerProps)=>{
-				return(<TrendingsNow trendings={trendings} />)
-			}}/>
-			
+			<Route
+				exact
+				path='/'
+				render={(routerProps) => {
+					return <TrendingsNow trendings={trendings} />;
+				}}
+			/>
+
 			<Route
 				exact
 				path='/trending/:id'
 				render={(routerProps) => {
 					console.log(routerProps);
-					return <Trending trendings={trendings} id={routerProps.match.params.id} />;
+					return (
+						<Trending trendings={trendings} id={routerProps.match.params.id} />
+					);
 				}}
 			/>
+			<Route path='/' exact component={Trailers} />
 			<Route
 				exact
 				path='/'
@@ -128,16 +140,18 @@ function App() {
 					);
 				}}
 			/>
-			
+
 			<Route
 				exact
-				path='/:id'
+				path='/search/:id'
 				render={(routerProps) => {
 					console.log(routerProps);
 					return <Movie datas={datas} id={routerProps.match.params.id} />;
 				}}
 			/>
-		<Footer />
+			<Route path='/watch' exact component={WatchList} />
+			<Route path='/account' exact component={MyAccount} />
+			<Footer />
 		</div>
 	);
 }
