@@ -7,7 +7,7 @@ function Search(props) {
 				<form onSubmit={handleSubmit}>
 					<input
 						placeholder='Search for Movies, TV Shows'
-						type='test'
+						type='text'
 						name='searchString'
 						required
 						onChange={handleChange}

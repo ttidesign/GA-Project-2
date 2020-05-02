@@ -11,7 +11,7 @@ function Footer() {
 					<a href='https://www.themoviedb.org/'>
 						<img className='brand' src={logo} alt='movie database logo' />
 					</a>
-					<p style={{ marginTop: '5px' }}>Powered by The Movie Database</p>
+					<p className='brand-info'>Powered by The Movie Database</p>
 				</div>
 			</nav>
 		</footer>

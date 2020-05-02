@@ -74,7 +74,7 @@ function App() {
 		.catch(console.error);
 		}
 	
-	//get value form search box
+	//get value from search box
 	function handleChange(event) {
 		setSearchString(event.target.value);
 	}
@@ -84,8 +84,9 @@ function App() {
 		event.preventDefault();
 		getDatas(searchString);
 	}
+	
 	return (
-		<div>
+		<div className='app-wrapper'>
 			<Nav />
 
 			<Route
@@ -101,6 +102,7 @@ function App() {
 					);
 				}}
 			/>
+
 			<Route
 				exact
 				path='/'
@@ -120,6 +122,7 @@ function App() {
 				}}
 			/>
 			<Route path='/' exact component={Trailers} />
+
 			<Route
 				exact
 				path='/'
@@ -127,6 +130,7 @@ function App() {
 					return <LastSearch lastSearch={lastSearch} />;
 				}}
 			/>
+			
 			<Route
 				exact
 				path='/'
@@ -149,8 +153,8 @@ function App() {
 					return <Movie datas={datas} id={routerProps.match.params.id} />;
 				}}
 			/>
-			<Route path='/watch' exact component={WatchList} />
-			<Route path='/account' exact component={MyAccount} />
+			<Route path='/watchlist' exact component={WatchList} />
+			<Route path='/account' exact component={MyAccount}/>
 			<Footer />
 		</div>
 	);

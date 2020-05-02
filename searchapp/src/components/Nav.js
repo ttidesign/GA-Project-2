@@ -3,24 +3,22 @@ import { Link } from 'react-router-dom';
 import logo from '../Shared/MS-W.svg';
 function Nav() {
 	return (
-		<div className='nav-container'>
-			<nav>
+		<nav>
+			<Link to='/'>
+				<img className='main-logo' src={logo} alt='movie database logo' />
+			</Link>
+			<ul>
 				<Link to='/'>
-					<img className='main-logo' src={logo} alt='movie database logo' />
+					<li>Home |</li>
 				</Link>
-				<ul>
-					<Link to='/'>
-						<li>Home |</li>
-					</Link>
-					<Link to='/watch'>
-						<li>Watch List |</li>
-					</Link>
-					<Link to='/account'>
-						<li>My Account</li>
-					</Link>
-				</ul>
-			</nav>
-		</div>
+				<Link to='/watchlist'>
+					<li>Watch List |</li>
+				</Link>
+				<Link to='/account'>
+					<li>My Account</li>
+				</Link>
+			</ul>
+		</nav>
 	);
 }
 export default Nav;

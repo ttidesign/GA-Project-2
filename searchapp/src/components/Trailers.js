@@ -7,19 +7,33 @@ class Trailers extends React.Component {
 		super(props);
 	}
 	render() {
-		function rotateClip() {}
 		const opts = {
 			height: '200',
 			width: '360',
 			playerVars: {
-				// https://developers.google.com/youtube/player_parameters
 				autoplay: 1,
 			},
 		};
 		return (
-			<div>
+			<div className='trailers-container'>
 				<h4>LATEST TRAILERS</h4>
-				<YouTube videoId='A4du3_6QGm8' opts={opts} onReady={this._onReady} />
+				<div className='clip'>
+					<YouTube
+						videoId={imageUrl[2].link}
+						opts={opts}
+						onReady={this._onReady}
+					/>
+					<YouTube
+						videoId={imageUrl[3].link}
+						opts={opts}
+						onReady={this._onReady}
+					/>
+					<YouTube
+						videoId={imageUrl[4].link}
+						opts={opts}
+						onReady={this._onReady}
+					/>
+				</div>
 			</div>
 		);
 	}

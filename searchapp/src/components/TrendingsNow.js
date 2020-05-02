@@ -11,7 +11,7 @@ const TrendingsNow = ({ trendings }) => {
 					<div className='trending-image-container' key={data.id}>
 						<Link to={'/trending/' + parseInt(data.id)}>
 							<img
-								className='trending'
+								className='thumbnails'
 								src={
 									imageUrl[0].smallImage + data.poster_path ||
 									imageUrl[0].smallImage + data.profile_path

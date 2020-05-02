@@ -3,30 +3,34 @@ import Lists from './Lists';
 import imageUrl from './imageUrl';
 
 function WatchList() {
-	console.log(Lists);
 	let listItem;
 	if (Lists.length === 0) {
-		listItem = <h3>Watch List Is Empty</h3>;
+		listItem = <h3>WATCH LIST IS EMPTY</h3>;
 	} else if (Lists.length > 0) {
 		listItem = (
-			<div className='watch-list-board'>
+			<>
+				<h3>CURRENT WATCH LIST</h3>
 				{Lists.map((data) => {
 					if (data.poster_path === undefined) {
 						data.poster_path = data.profile_path;
 					}
 					return (
-						<div className='' key={Lists.id}>
-							<img
-								className=''
-								src={imageUrl[0].smallImage + data.poster_path}
-								alt='movie image'></img>
-							<h3>{data.original_title || data.name}</h3>
-							<h3>Release: {data.release_date || data.first_air_date}</h3>
-							<h3>{data.overview}</h3>
+						<div className='watch-list-board' key={Lists.id}>
+							<div>
+								<img
+									className='small-img'
+									src={imageUrl[0].smallImage + data.poster_path}
+									alt='movie image'></img>
+							</div>
+							<div className='watch-list-info'>
+								<h4>{data.original_title || data.name}</h4>
+								<h4>Release: {data.release_date || data.first_air_date}</h4>
+								<p>{data.overview}</p>
+							</div>
 						</div>
 					);
 				})}
-			</div>
+			</>
 		);
 	}
 

@@ -17,7 +17,7 @@ function SearchResults(props) {
 						<div className='single-board' key={data.id}>
 							<Link to={'/search/' + parseInt(data.id)}>
 								<img
-									className='thumbnails'
+									className='medium-img'
 									src={imageUrl[0].smallImage + data.poster_path}
 									alt={data.original_title}></img>
 								<h3>{data.original_title || data.name}</h3>
@@ -42,7 +42,7 @@ function SearchResults(props) {
 						<div className='single-board' key={data.id}>
 							<Link to={'/' + parseInt(data.id)}>
 								<img
-									className='thumbnails'
+									className='medium-img'
 									src={imageUrl[0].smallImage + data.poster_path}
 									alt={data.original_title}></img>
 								<h3>{data.original_title || data.name}</h3>

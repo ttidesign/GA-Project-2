@@ -6,7 +6,7 @@ function LastSearch({ lastSearch }) {
 			<div className='last-search-div'>
 				<p>
 					<strong>
-						Showing Search Results For : <em>{lastSearch}</em>
+						SHOWING SEARCH RESULTS FOR : <em>{lastSearch}</em>
 					</strong>
 				</p>
 			</div>
