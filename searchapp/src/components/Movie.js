@@ -9,7 +9,6 @@ function Movie(props) {
 	useEffect(() => {
 		for (let i = 0; i < props.datas.length; i++) {
 			if (props.datas[i].id === parseInt(props.id)) {
-				console.log(props, props.datas[0].overview);
 				setInfo(props.datas[i]);
 			}
 		}
@@ -36,7 +35,7 @@ function Movie(props) {
 					src={imageUrl[1].largeImg + info.poster_path}
 					alt={info.title}></img>
 				<div className='info-container'>
-					<h2>{info.original_title} </h2>
+					<h2>{info.original_title || info.original_name} </h2>
 					<h4>Release Date: {info.release_date || info.first_air_date}</h4>
 					<h4>Rating: {info.vote_average}/10</h4>
 					<h4>

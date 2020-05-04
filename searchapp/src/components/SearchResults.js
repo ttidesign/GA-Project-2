@@ -40,7 +40,7 @@ function SearchResults(props) {
 					}
 					return (
 						<div className='single-board' key={data.id}>
-							<Link to={'/' + parseInt(data.id)}>
+							<Link to={'/search/' + parseInt(data.id)}>
 								<img
 									className='medium-img'
 									src={imageUrl[0].smallImage + data.poster_path}

@@ -7,7 +7,7 @@ function Footer() {
 				<div className='ttid'>
 					<p>Designed by TTIDESIGN</p>
 				</div>
-				<div>
+				<div className='tmbd'>
 					<a href='https://www.themoviedb.org/'>
 						<img className='brand' src={logo} alt='movie database logo' />
 					</a>

@@ -52,7 +52,7 @@ function App() {
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
-				console.log(response.results)
+				//console.log(response.results)
 				//set datas value and assign to datas arry
 				setDatas(response.results);
 				// display last search item on page
@@ -84,7 +84,6 @@ function App() {
 		event.preventDefault();
 		getDatas(searchString);
 	}
-	
 	return (
 		<div className='app-wrapper'>
 			<Nav />
@@ -102,7 +101,7 @@ function App() {
 					);
 				}}
 			/>
-
+			
 			<Route
 				exact
 				path='/'
@@ -115,14 +114,13 @@ function App() {
 				exact
 				path='/trending/:id'
 				render={(routerProps) => {
-					console.log(routerProps);
+					//console.log(routerProps);
 					return (
 						<Trending trendings={trendings} id={routerProps.match.params.id} />
 					);
 				}}
 			/>
 			<Route path='/' exact component={Trailers} />
-
 			<Route
 				exact
 				path='/'
@@ -130,7 +128,6 @@ function App() {
 					return <LastSearch lastSearch={lastSearch} />;
 				}}
 			/>
-			
 			<Route
 				exact
 				path='/'
@@ -149,12 +146,11 @@ function App() {
 				exact
 				path='/search/:id'
 				render={(routerProps) => {
-					console.log(routerProps);
 					return <Movie datas={datas} id={routerProps.match.params.id} />;
 				}}
 			/>
 			<Route path='/watchlist' exact component={WatchList} />
-			<Route path='/account' exact component={MyAccount}/>
+			<Route path='/account' exact component={MyAccount} />
 			<Footer />
 		</div>
 	);
