@@ -53,6 +53,8 @@ This idea bring out another set of challenges where I have to create condition t
 
 ## Code Sample
 
+Below is the code that I used for condition render to display search results component. It allowed users to toggle more/less results show on page.
+
 ```javascript
 function SearchResults(props) {
 	const { datas, moreItem, getMoreItem } = props;
@@ -88,10 +90,6 @@ function SearchResults(props) {
 }
 export default SearchResults;
 ```
-
-## Testing
-
-test sample code goes here
 
 ### Silver, Gold and Platinum Goal
 
