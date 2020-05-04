@@ -1,38 +1,376 @@
-.App {
-  text-align: center;
+* {
+	font-family: 'Manrope';
+	box-sizing: border-box;
+}
+.root {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+.app-wrapper {
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: minmax(800px, 2fr);
+}
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: black;
+	color: white;
+	height: 10vh;
+}
+footer {
+	width: 100%;
+	height: 10vh;
+	background-color: black;
+	align-self: flex-end;
+}
+nav,
+ul {
+	list-style: none;
+	align-items: center;
+	padding: 0 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+	display: inline;
+	line-height: 1.6;
+	padding-left: 10px;
+	font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input {
+	margin: 0 20px;
+	height: 45px;
+	width: 50vw;
+	font-size: 16px;
+}
+button {
+	box-shadow: 3px 3px 7px darkgrey;
+	height: 45px;
+	font-size: 16px;
+}
+button:hover {
+	color: darkorange;
+}
+img {
+	box-shadow: 3px 3px 10px black;
+}
+h4 {
+	margin: 15px auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h2 {
+	font-size: 35px;
+	font-weight: 600;
+}
+p {
+	margin: 5px auto;
+}
+a,
+li:hover {
+	color: lightsalmon;
+}
+.search-container {
+	width: 100%;
+	margin: 0 auto;
+	height: 88px;
+	background-color: rgba(169, 169, 169, 0.5);
+	box-shadow: 2px 0 8px black;
+}
+.search-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin: 0 auto;
+	padding-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-button {
+	width: 150px;
+}
+.last-search-div {
+	margin: 1rem 1rem 1rem;
+}
+.gallery-container {
+	margin: 0 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.thumbnails {
+	width: 130px;
+	margin: 0 5px;
+	border-radius: 10px;
+	object-fit: scale-down;
+}
+.small-img {
+	width: 150px;
+	height: auto;
+	border-radius: 15px;
+	object-fit: scale-down;
+	margin: 1rem 1rem;
+}
+.medium-img {
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	box-shadow: none;
+}
+
+.trending-container {
+	display: flex;
+	overflow: auto;
+	margin: 0 0 1rem 1rem;
+}
+.trending-image-container {
+	padding-top: 1rem;
+}
+.trending-image-container:hover {
+	background-color: lightgray;
+}
+.main-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-gap: 1rem;
+}
+.single-board {
+	background-color: black;
+	box-shadow: 3px 3px 10px black;
+	opacity: 1;
+}
+.single-board:hover {
+	background-color: lightgrey;
+	opacity: 0.9;
+}
+.single-board,
+a {
+	text-decoration: none;
+	color: white;
+}
+.single-board,
+a:hover {
+	text-decoration: none;
+	color: black;
+}
+h3,
+.year-info {
+	text-align: center;
+	font-size: 18px;
+	margin: 5px auto;
+}
+.year-info {
+	font-size: 15px;
+}
+.brand {
+	margin-top: 15px;
+	display: flex;
+	width: 150px;
+	margin-left: 60px;
+	float: right;
+}
+
+.section-container {
+	height: 80vh;
+	margin: none;
+	padding: auto 0;
+	background-color: rgb(53, 53, 53);
+}
+.movie-container {
+	display: flex;
+	width: 80%;
+	margin: 5.5rem auto;
+	align-content: center;
+}
+.info-container {
+	color: white;
+	margin-left: 20px;
+	text-align: left;
+}
+.main-logo {
+	opacity: 0.8;
+}
+.main-logo:hover {
+	opacity: 1;
+}
+.button-container {
+	display: flex;
+}
+.show-more-button {
+	margin: 40px auto;
+	width: 110px;
+	display: flex;
+}
+.home-button {
+	margin-top: 20px;
+	margin-right: 20px;
+	height: 50px;
+	width: 100px;
+	box-shadow: 3px 3px 8px black;
+	background-color: white;
+}
+.add-to-list {
+	margin-top: 20px;
+	margin-right: 10px;
+	height: 50px;
+	width: 200px;
+	box-shadow: 3px 3px 8px black;
+	background-color: white;
+}
+.watch-list-board {
+	display: flex;
+	flex-grow: 1;
+	justify-content: center;
+	border-top: 1px solid lightgray;
+}
+.watch-list-info {
+	width: 600px;
+}
+.trailers-container {
+	padding: 0 1rem 1rem 1rem;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+}
+.clip {
+	display: flex;
+	justify-content: space-evenly;
+	overflow: auto;
+}
+.email,
+.password,
+.confirm-password,
+.signup-button {
+	margin: 20px auto;
+	display: block;
+	border: 1px solid lightgray;
+	height: 60px;
+}
+.signup-button {
+	width: 150px;
+}
+
+/* responsive */
+
+@media (max-width: 1366px) {
+	.section-container {
+		display: block;
+		min-height: 800px;
+	}
+	.app-wrapper {
+		grid-template-columns: minmax(300px, 1fr);
+	}
+}
+@media (max-width: 823px) {
+	input {
+		width: 60%;
+	}
+	nav {
+		min-height: 50px;
+	}
+	li {
+		font-size: 15px;
+	}
+	footer {
+		font-size: 15px;
+	}
+	.section-container {
+		display: block;
+		min-height: 1000px;
+	}
+	.main-logo {
+		width: 75px;
+		height: auto;
+	}
+	.search-button {
+		width: 100px;
+	}
+	.search-bar {
+		display: block;
+	}
+	.brand {
+		width: 120px;
+	}
+	.brand-info {
+		text-align: right;
+	}
+	.button-container {
+		width: 350px;
+		display: flex;
+		margin: 0 auto;
+	}
+	.big-img {
+		width: 300px;
+		object-fit: cover;
+	}
+	.movie-container {
+		width: 350px;
+		justify-content: space-evenly;
+	}
+	.info-container {
+		width: 350px;
+	}
+	.clip {
+		justify-content: start;
+		overflow: auto;
+	}
+}
+
+@media (max-width: 414px) {
+	.app-wrapper {
+		grid-template-columns: minmax(200px, 1fr);
+	}
+	p {
+		font-size: 14px;
+	}
+	nav {
+		width: 100%;
+	}
+	ul li {
+		font-size: 13px;
+	}
+	footer {
+		align-self: flex-end;
+		font-size: 13px;
+	}
+	input {
+		width: 60%;
+	}
+	.section-container {
+		min-height: 1200px;
+	}
+	.main-logo {
+		width: 75px;
+		height: auto;
+	}
+	.search-button {
+		width: 100px;
+	}
+	.search-bar {
+		display: block;
+	}
+	.ttid {
+		align-self: start;
+	}
+	.tmbd {
+		align-self: flex-end;
+	}
+	.brand {
+		width: 100px;
+	}
+
+	.big-img {
+		margin-top: 15px;
+		margin-left: 15px;
+		width: 315px;
+		object-fit: cover;
+	}
+	.movie-container {
+		width: 350px;
+		display: block;
+		margin: 0 auto;
+	}
+	.info-container {
+		width: 315px;
+		display: block;
+		margin: 0 auto;
+	}
 }
