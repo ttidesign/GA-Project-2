@@ -34,6 +34,7 @@ function App() {
 	
 	useEffect(() => {
 		getDatas(searchString);
+		//eslint-disable-next-line
 	}, []);
 
 	useEffect(() => {
@@ -45,6 +46,7 @@ function App() {
 	function getMoreItem() {
 		setMoreItem(!moreItem);
 	}
+
 	//function with api call to get data from server - search feature
 	function getDatas(searchString) {
 		const url = `https://api.themoviedb.org/3/search/multi?api_key=${searchOptions.key}${searchOptions.language}${searchOptions.query}${searchString}${searchOptions.page}${searchOptions.adult}`;
@@ -53,7 +55,7 @@ function App() {
 			.then((response) => response.json())
 			.then((response) => {
 				//console.log(response.results)
-				//set datas value and assign to datas arry
+				//set datas value and assign to datas array
 				setDatas(response.results);
 				// display last search item on page
 				setLastSearch(searchString);

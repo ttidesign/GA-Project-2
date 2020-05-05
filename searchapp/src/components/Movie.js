@@ -18,6 +18,7 @@ function Movie(props) {
 		Lists.push(info);
 		event.target.innerText = 'ADDED TO WATCH LIST';
 		event.target.style = 'font-weight:600; color:lightsalmon';
+		localStorage.setItem('watchlist', JSON.stringify(Lists));
 	}
 	if (info.length === 0) {
 		return (
