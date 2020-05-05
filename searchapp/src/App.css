@@ -247,6 +247,10 @@ h3,
 .signup-button {
 	width: 150px;
 }
+.clear-list {
+	margin: 15px auto;
+	width: 160px;
+}
 
 /* responsive */
 
@@ -372,5 +376,9 @@ h3,
 		width: 315px;
 		display: block;
 		margin: 0 auto;
+	}
+	.clip {
+		display: flex;
+		overflow: auto;
 	}
 }
