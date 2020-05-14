@@ -1,6 +1,6 @@
 ## About The Project
 
-[Movies Search](https://tk-movies-search.herokuapp.com/) is a multi pages website built using React, it allows users to search for movies, tv shows, documentaries and many more.
+[Movies Search](https://tk-movies-search.herokuapp.com/) is a singple page application (SPA) built using React, it allows users to search for movies, tv shows, documentaries and many more.
 
 ## Movies Search
 
