@@ -39,7 +39,7 @@ TBDM - Data and source for search's contents
 
 ## Installations and Instructions
 
-No installation needed for this website/app. [Movies Search](https://tk-movies-search.herokuapp.com/) is hosted on heroku and should be useable via this [link](https://tk-movies-search.herokuapp.com/).
+No installation needed for this website/app. [Movies Search](https://tk-movies-search.herokuapp.com/) is hosted on heroku and should be usable via this [link](https://tk-movies-search.herokuapp.com/).
 
 ## Challenges and Overcome Obstacles
 
